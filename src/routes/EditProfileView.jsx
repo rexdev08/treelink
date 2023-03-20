@@ -17,10 +17,9 @@ const EditProfileView = () => {
   const [profileUrl, setProfileUrl] = useState(null);
 
   const fileRef = useRef(null);
+  const linkRef = useRef(null);
 
   async function handleUserLoggedIn(user) {
-    console.log(user);
-
     setCurentUser(user);
     let url;
     if (user.profilePicture) {
@@ -88,7 +87,10 @@ const EditProfileView = () => {
           </div>
 
           <div>
-            <button className="btn" onClick={handleOpenFilePicker}>
+            <button
+              className={`btn ${style.pickerBtn}`}
+              onClick={handleOpenFilePicker}
+            >
               Elige nueva foto de perfil
             </button>
             <input
@@ -100,7 +102,24 @@ const EditProfileView = () => {
           </div>
         </div>
 
-        {currentUser?.username && <span>{currentUser?.username}</span>}
+        {currentUser?.username && (
+          <div className={style.shareContainer}>
+            <a
+              ref={linkRef}
+              href={` https://mytreelink.netlify.app/u/${currentUser?.username}`}
+            >
+              https://mytreelink.netlify.app/u/{currentUser?.username}
+            </a>
+            <button
+              className={style.copyBtn}
+              onClick={() =>
+                navigator.clipboard.writeText(linkRef.current.innerText)
+              }
+            >
+              <span className="material-icons">content_copy</span>
+            </button>
+          </div>
+        )}
       </div>
     </DashboardWrapper>
   );

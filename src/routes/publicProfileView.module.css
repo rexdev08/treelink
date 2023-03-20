@@ -5,7 +5,10 @@
   /* background-color: red; */
 }
 .profilePicture img {
+  width: 100%;
   max-width: clamp(100px, 15vw, 150px);
   aspect-ratio: 1/1;
   border-radius: 50%;
+  background-color: rgb(7, 168, 21);
+  border: 0.3rem solid rgb(7, 168, 21);
 }
