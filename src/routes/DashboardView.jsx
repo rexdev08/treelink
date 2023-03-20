@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AuthProvider from "../components/authProvider";
+import AuthProvider from "../components/AuthProvider";
 import DashboardWrapper from "../components/DashboardWrapper";
 import { v4 as uuidv4 } from "uuid";
 import {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthProvider from "../components/authProvider";
+import AuthProvider from "../components/AuthProvider";
 import { existsUsername, updateUser } from "../firebase/firebase";
 import style from "./chooseUsernameView.module.css";
 

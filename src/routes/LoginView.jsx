@@ -2,7 +2,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import AuthProvider from "../components/authProvider";
+import AuthProvider from "../components/AuthProvider";
 import style from "./loginView.module.css";
 
 const LoginView = () => {

@@ -1,6 +1,6 @@
-import AuthProvider from "../components/authProvider";
+import AuthProvider from "../components/AuthProvider";
 import DashboardWrapper from "../components/DashboardWrapper";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   getProfilePhotoUrl,
