@@ -19,6 +19,8 @@ const EditProfileView = () => {
   const fileRef = useRef(null);
 
   async function handleUserLoggedIn(user) {
+    console.log(user);
+
     setCurentUser(user);
     let url;
     if (user.profilePicture) {
@@ -79,10 +81,12 @@ const EditProfileView = () => {
     <DashboardWrapper>
       <div>
         <h2>Editar informacion de perfil</h2>
+
         <div className={style.profilePictureContainer}>
           <div>
             <img src={profileUrl || tree} alt="" />
           </div>
+
           <div>
             <button className="btn" onClick={handleOpenFilePicker}>
               Elige nueva foto de perfil
@@ -95,6 +99,8 @@ const EditProfileView = () => {
             />
           </div>
         </div>
+
+        {currentUser?.username && <span>{currentUser?.username}</span>}
       </div>
     </DashboardWrapper>
   );
