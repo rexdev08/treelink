@@ -109,15 +109,17 @@ const DashboardView = () => {
             name="title"
             onChange={handleOnChange}
             value={title}
+            required
           />
 
           <label htmlFor="url">Direccion web (URL)</label>
           <input
             className="input"
-            type="text"
+            type="url"
             name="url"
             onChange={handleOnChange}
             value={url}
+            required
           />
 
           <input className="btn" type="submit" value={"Crear nuevo link"} />

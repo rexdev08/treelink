@@ -40,7 +40,8 @@ code {
   padding: 1rem;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="url"] {
   border: solid 1px #078f07;
   border-radius: 3px;
   padding: 8px 10px;
