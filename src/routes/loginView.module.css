@@ -1,0 +1,21 @@
+.loginView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.provider {
+  border: none;
+  width: 300px;
+  padding: 10px 0;
+  color: white;
+  background-color: rgb(7, 168, 21);
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+  font-size: clamp(1.3rem, 7vw, 1.6rem);
+}

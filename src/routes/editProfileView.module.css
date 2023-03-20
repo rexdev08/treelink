@@ -1,0 +1,25 @@
+.profilePictureContainer {
+  padding: 10px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.profilePictureContainer img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(7, 168, 21);
+  border: 0.3rem solid rgb(7, 168, 21);
+}
+
+.profileInput {
+  display: none;
+}
+
+@media (min-width: 450px) {
+  .profilePictureContainer {
+    flex-flow: row;
+  }
+}

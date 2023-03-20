@@ -1,0 +1,11 @@
+.profileContainer {
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+  /* background-color: red; */
+}
+.profilePicture img {
+  max-width: clamp(100px, 15vw, 150px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
