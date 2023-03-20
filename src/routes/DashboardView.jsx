@@ -102,7 +102,7 @@ const DashboardView = () => {
           onSubmit={handleOnSubmit}
           className={style.entryContainer}
         >
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Titulo del link</label>
           <input
             className="input"
             type="text"
@@ -111,7 +111,7 @@ const DashboardView = () => {
             value={title}
           />
 
-          <label htmlFor="url">URL</label>
+          <label htmlFor="url">Direccion web (URL)</label>
           <input
             className="input"
             type="text"
