@@ -3,6 +3,7 @@
   flex-flow: column;
   gap: 15px;
   margin: 1rem;
+  text-align: center;
 }
 .publicLinkContainer {
   color: black;

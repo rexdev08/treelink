@@ -1,23 +1,38 @@
 import AuthProvider from "../components/AuthProvider";
 import DashboardWrapper from "../components/DashboardWrapper";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   getProfilePhotoUrl,
+  getUserPublicProfileInfo,
   setUserProfilePhoto,
   updateUser,
 } from "../firebase/firebase";
 import style from "./editProfileView.module.css";
+import styleLinks from "../components/publicLink.module.css";
 import tree from "../assets/tree.svg";
+import PublicLink from "../components/PublicLink";
 
 const EditProfileView = () => {
   const navigate = useNavigate();
   const [currentUser, setCurentUser] = useState({});
   const [state, setState] = useState(0);
   const [profileUrl, setProfileUrl] = useState(null);
+  const [links, setLinks] = useState(null);
 
   const fileRef = useRef(null);
   const linkRef = useRef(null);
+
+  useEffect(() => {
+    const getInfo = async () => {
+      if (currentUser.uid) {
+        const userInfo = await getUserPublicProfileInfo(currentUser.uid);
+        setLinks(userInfo.linksInfo);
+      }
+    };
+
+    getInfo();
+  }, [currentUser]);
 
   async function handleUserLoggedIn(user) {
     setCurentUser(user);
@@ -120,6 +135,13 @@ const EditProfileView = () => {
             </button>
           </div>
         )}
+      </div>
+
+      <div className={styleLinks.publicLinksContainer}>
+        {links &&
+          links?.map(({ url, title, docId }) => (
+            <PublicLink key={docId} url={url} title={title} />
+          ))}
       </div>
     </DashboardWrapper>
   );
